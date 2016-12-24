@@ -1,0 +1,24 @@
+{
+  "name": "via",
+  "version": "0.0.1",
+  "description": "Use Vue 2 components in Angular 1.x",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maopy/via.git"
+  },
+  "keywords": [
+    "vue2",
+    "angular1",
+    "vue-in-angular"
+  ],
+  "author": "Maopy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maopy/via/issues"
+  },
+  "homepage": "https://github.com/Maopy/via#readme"
+}
