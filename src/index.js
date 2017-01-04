@@ -145,7 +145,6 @@ let getExpressions = (attributes) => {
 }
 
 let ngVueLinker = (componentName, jqElement, elAttributes, scope, $injector) => {
-  // console.log(componentName, jqElement, elAttributes, scope, $injector, 11)
   const dataExprsMap = getExpressions(elAttributes)
   const Component = getVueComponent(componentName, $injector)
   const directives = evaluateDirectives(elAttributes, scope) || []
@@ -153,8 +152,15 @@ let ngVueLinker = (componentName, jqElement, elAttributes, scope, $injector) => 
   const reactiveSetter = Vue.set.bind(Vue, reactiveData)
   const vueInstance = new Vue({
     data: reactiveData,
+    methods: {
+      handleChange (propName, val) {
+        scope.$apply(() => {
+          this[propName] = val
+        })
+      }
+    },
     render (h) {
-      return <Component {...{ directives }} {...{ props: reactiveData }} />
+      return <Component {...{ directives }} {...{ props: reactiveData }} on-viaPropsChange={this.handleChange} />
     }
   })
 

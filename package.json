@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/Maopy/via#readme",
   "dependencies": {
-    "angular": "^1.6.1",
-    "vue": "^2.1.6"
+    "angular": "1",
+    "vue": "^2.1.8"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
